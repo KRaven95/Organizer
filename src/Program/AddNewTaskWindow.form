@@ -44,7 +44,7 @@
                           <Group type="102" attributes="0">
                               <Component id="taskField" max="32767" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="passTheTaskButton" min="-2" max="-2" attributes="0"/>
+                              <Component id="passButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -86,7 +86,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="taskField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="passTheTaskButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="passButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="2" max="-2" attributes="0"/>
@@ -125,12 +125,12 @@
         <Property name="text" type="java.lang.String" value="DD/MM/YYYY"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="passTheTaskButton">
+    <Component class="javax.swing.JButton" name="passButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Przeka&#x17c;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passTheTaskButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="returnButton">

@@ -21,7 +21,7 @@ public class AddNewTaskWindow extends JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         taskNameLabel = new javax.swing.JLabel();
         dateFormatLabel = new javax.swing.JLabel();
-        passTheTaskButton = new javax.swing.JButton();
+        passButton = new javax.swing.JButton();
         returnButton = new javax.swing.JButton();
         datePanel = new javax.swing.JPanel();
         comboBoxYear = new javax.swing.JComboBox<>();
@@ -64,10 +64,10 @@ public class AddNewTaskWindow extends JFrame {
 
         dateFormatLabel.setText("DD/MM/YYYY");
 
-        passTheTaskButton.setText("Przekaż");
-        passTheTaskButton.addActionListener(new java.awt.event.ActionListener() {
+        passButton.setText("Przekaż");
+        passButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passTheTaskButtonActionPerformed(evt);
+                passButtonActionPerformed(evt);
             }
         });
 
@@ -152,7 +152,7 @@ public class AddNewTaskWindow extends JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(taskField)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(passTheTaskButton))))
+                                .addComponent(passButton))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -183,7 +183,7 @@ public class AddNewTaskWindow extends JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(taskField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passTheTaskButton))
+                    .addComponent(passButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -226,7 +226,7 @@ public class AddNewTaskWindow extends JFrame {
         mainFrame.addTaskAbstAct.setEnabled(true);
     }
 
-    private void passTheTaskButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passTheTaskButtonActionPerformed
+    private void passButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passButtonActionPerformed
         saveDate();
         if(calculateLeftDays() < 0)
             wrongDateMessage();
@@ -241,7 +241,7 @@ public class AddNewTaskWindow extends JFrame {
             displayData();
             mainFrame.appendAsteriskToTitle();
         }
-    }//GEN-LAST:event_passTheTaskButtonActionPerformed
+    }//GEN-LAST:event_passButtonActionPerformed
 
     private void dateDoesntExistsMessage() throws HeadlessException {
         JOptionPane.showMessageDialog(rootPane, "Taka data nie istnieje");
@@ -488,7 +488,7 @@ public class AddNewTaskWindow extends JFrame {
     private javax.swing.JLabel dateFormatLabel;
     private javax.swing.JPanel datePanel;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JButton passTheTaskButton;
+    private javax.swing.JButton passButton;
     private javax.swing.JButton returnButton;
     private javax.swing.JTextField taskField;
     private javax.swing.JLabel taskNameLabel;

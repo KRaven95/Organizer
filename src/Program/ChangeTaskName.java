@@ -5,22 +5,20 @@ import java.awt.*;
 import javax.swing.*;
 import static Program.MainFrame.*;
 
-public final class ChangeTaskName extends JFrame{
+public final class ChangeTaskName extends JFrame {
     
-    public ChangeTaskName()
-    {
+    public ChangeTaskName() {
         initComponents();
     }
-    void initComponents()
-    {
+    void initComponents() {
         this.setTitle("Zmień nazwę zadania");
         this.setBounds(new Rectangle(300, 300, 350, 100));
         this.setLayout(gLayout);
         this.getContentPane().add(tField);
         this.getContentPane().add(bChange);
         this.setResizable(false);
-        this.addWindowListener(new WindowAdapter() 
-        {
+        this.addWindowListener(new WindowAdapter() {
+            
             @Override
             public void windowClosing(WindowEvent e) {
                 mainFrame.chNAbstAct.setEnabled(true);
@@ -33,13 +31,11 @@ public final class ChangeTaskName extends JFrame{
             }
         });
         
-        tField.addKeyListener(new KeyAdapter()
-        {
-            int a = 0;
+        tField.addKeyListener(new KeyAdapter() {
+            
             @Override
             public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode() == KeyEvent.VK_ENTER)
-                {
+                if(e.getKeyCode() == KeyEvent.VK_ENTER) {
                     if(tField.getText().isBlank())
                         JOptionPane.showMessageDialog(rootPane, "Prosze wpisac tekst");
                     else 
