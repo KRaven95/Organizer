@@ -1,13 +1,14 @@
 package UserInterface;
 
+import Logics.FieldsHandler;
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
-import static UserInterface.MainFrame.*;
+import static UserInterface.LeadingFrame.*;
 
-public final class ChangeTaskName extends JFrame {
+public final class ChangeTaskNameFrame extends JFrame {
     
-    public ChangeTaskName() {
+    public ChangeTaskNameFrame() {
         initComponents();
     }
     void initComponents() {

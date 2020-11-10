@@ -1,8 +1,9 @@
-package UserInterface;
+package DataAccess;
 
-import static UserInterface.MainFrame.mainFrame;
-import static UserInterface.TimeHandler.th;
+import Logics.FieldsHandler;
+import static UserInterface.LeadingFrame.mainFrame;
 import java.io.*;
+import static Logics.TimeHandler.timeHandler;
 
 public class SaveToTxt implements Runnable{
 
@@ -16,8 +17,8 @@ public class SaveToTxt implements Runnable{
             }
             pWriter.close();
             PrintWriter timeWriter = new PrintWriter(new FileWriter(new File(System.getProperty("user.home"), "Time.txt")));
-            timeWriter.println(th.getToday());
-            timeWriter.println(th.getActualYear());
+            timeWriter.println(timeHandler.getToday());
+            timeWriter.println(timeHandler.getActualYear());
             timeWriter.close();
         }
         catch (IOException ex) {

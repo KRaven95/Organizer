@@ -1,15 +1,19 @@
 package UserInterface;
 
-import static UserInterface.FieldsHandler.*;
-import static UserInterface.TimeHandler.th;
+import Logics.TimerEvent;
+import DataAccess.SaveToTxt;
+import DataAccess.LoadFromTxt;
+import Logics.FieldsHandler;
+import static Logics.FieldsHandler.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.concurrent.*;
+import static Logics.TimeHandler.timeHandler;
 
-public class MainFrame extends JFrame {
+public class LeadingFrame extends JFrame {
     
-    public MainFrame() {
+    public LeadingFrame() {
         initComponents();
     }
     
@@ -78,8 +82,8 @@ public class MainFrame extends JFrame {
                 TimerEvent t1 = new TimerEvent();
                 ScheduledThreadPoolExecutor scheduler = new ScheduledThreadPoolExecutor(1);
                 doLoadFromTxt();
-                th.setToday(FieldsHandler.actualDay());
-                th.setActualYear(getCurrentYear());
+                timeHandler.setToday(FieldsHandler.actualDay());
+                timeHandler.setActualYear(getCurrentYear());
                 scheduler.scheduleAtFixedRate(t1, t1.secondsLeft(), t1.getSECONDS_OF_DAY(), TimeUnit.SECONDS);
                 checkIfDayIsDifferent();
             }
@@ -90,18 +94,18 @@ public class MainFrame extends JFrame {
             }
 
             private void checkIfDayIsDifferent() {
-                if(th.isDifferentDay()) {
+                if(timeHandler.isDifferentDay()) {
                     checkIfYearIsDifferent();
                 }
             }
 
             private void checkIfYearIsDifferent() {
-                if(th.isDifferentYear()) {
+                if(timeHandler.isDifferentYear()) {
                     int difference = calculateDifferenceBetweenDays();
                     FIELDS_HANDLER.refreshAndDisplayRefreshedList(difference);
                 }
                 else
-                    FIELDS_HANDLER.refreshAndDisplayRefreshedList(th.calculateDifferenceBetweenDays());
+                    FIELDS_HANDLER.refreshAndDisplayRefreshedList(timeHandler.calculateDifferenceBetweenDays());
             }
             
             @Override
@@ -199,7 +203,7 @@ public class MainFrame extends JFrame {
     }
 
     private void createChangeTaskWindow() {
-        chReference = new ChangeTaskName();
+        chReference = new ChangeTaskNameFrame();
         chReference.setVisible(true);
     }
 
@@ -260,7 +264,7 @@ public class MainFrame extends JFrame {
     }
 
     private int calculateDifferenceBetweenDays() {
-        return FieldsHandler.isLeap(th.getPastYear()) ? (366 - th.getYesterday()) + th.getToday() : (365 - th.getYesterday()) + th.getToday();
+        return FieldsHandler.isLeap(timeHandler.getPastYear()) ? (366 - timeHandler.getYesterday()) + timeHandler.getToday() : (365 - timeHandler.getYesterday()) + timeHandler.getToday();
     }
     
     public void setElements() {   
@@ -294,7 +298,7 @@ public class MainFrame extends JFrame {
     }
     
     private void createAddTaskWindowAndUnableToCreateAnother() {
-        addTaskReference = new AddNewTaskWindow();
+        addTaskReference = new AddNewTaskFrame();
         addTaskReference.setVisible(true);
         addNewTaskButtonsHighlightOff();
         newTask.setEnabled(false);
@@ -415,7 +419,7 @@ public class MainFrame extends JFrame {
         private String name;
     }
     
-    String whereAmI = "Work.txt";
+    public String whereAmI = "Work.txt";
     int recentlyClicked;
     private final JLabel[] lbFactory = new LabelFactory[39];
     AbstractAction addTaskAbstAct, chNAbstAct;
@@ -430,16 +434,11 @@ public class MainFrame extends JFrame {
     private final String TITLE_NON_ASTERISK = "Organizer v2.0";
     private final GridLayout GRID_LAYOUT = new GridLayout(listSize(), 2, 0, 2);
     private final FieldsHandler FIELDS_HANDLER = new FieldsHandler();
-    static MainFrame mainFrame = new MainFrame();
-    private AddNewTaskWindow addTaskReference;
-    public ChangeTaskName chReference;
+    public static LeadingFrame mainFrame = new LeadingFrame();
+    private AddNewTaskFrame addTaskReference;
+    public ChangeTaskNameFrame chReference;
     private final JMenuBar menuBar = new JMenuBar();
     private final JPanel mainPanel = new JPanel();
     private final JPopupMenu menuInPanel = new JPopupMenu();
     private final JPopupMenu menuOutsidePanel = new JPopupMenu();
-    
-    public static void main(String[] args) {
-        mainFrame.setVisible(true);
-        
-    } 
 }

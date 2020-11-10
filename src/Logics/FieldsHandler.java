@@ -1,6 +1,6 @@
-package UserInterface;
+package Logics;
 
-import static UserInterface.MainFrame.mainFrame;
+import static UserInterface.LeadingFrame.mainFrame;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -69,12 +69,12 @@ public class FieldsHandler {
         }
     }
     
-    static int actualDay() {
+    public static int actualDay() {
         Calendar calendar = Calendar.getInstance();
         return calendar.get(Calendar.DAY_OF_YEAR);
     }
     
-    static int selectedDays(int day, int month, int year, int numOfDays) {
+    public static int selectedDays(int day, int month, int year, int numOfDays) {
         int sumOfSelectedDays = (numOfDays + day);
         for(int i = getCurrentYear() ; i < year ; i++){
             sumOfSelectedDays += isLeap(i) ? 366 : 365;
@@ -93,7 +93,7 @@ public class FieldsHandler {
     
     private static int currentYear = LocalDate.now().getYear();
     static FieldsHandler fHandler;
-    static LinkedList<FieldsHandler> indexedList = new LinkedList<>();    //regular list of items
+    public static LinkedList<FieldsHandler> indexedList = new LinkedList<>();    //regular list of items
     private String task;
     private String date;
     private int index;

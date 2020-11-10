@@ -1,9 +1,10 @@
-package UserInterface;
+package DataAccess;
 
-import static UserInterface.MainFrame.mainFrame;
-import static UserInterface.TimeHandler.th;
+import Logics.FieldsHandler;
+import static UserInterface.LeadingFrame.mainFrame;
 import java.io.*;
 import java.util.StringTokenizer;
+import static Logics.TimeHandler.timeHandler;
 
 public class LoadFromTxt implements Runnable{
 
@@ -25,8 +26,8 @@ public class LoadFromTxt implements Runnable{
             
             bReader.close();
             BufferedReader timeReader = new BufferedReader(new FileReader(new File(System.getProperty("user.home"), "Time.txt")));
-            th.setYesterday(Integer.parseInt(timeReader.readLine()));
-            th.setPastYear(Integer.parseInt(timeReader.readLine()));
+            timeHandler.setYesterday(Integer.parseInt(timeReader.readLine()));
+            timeHandler.setPastYear(Integer.parseInt(timeReader.readLine()));
             timeReader.close();
             mainFrame.setElements();
             System.gc();

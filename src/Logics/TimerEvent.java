@@ -1,5 +1,7 @@
-package UserInterface;
+package Logics;
 
+import DataAccess.SaveToTxt;
+import Logics.FieldsHandler;
 import java.util.Calendar;
 
 public class TimerEvent extends Thread {

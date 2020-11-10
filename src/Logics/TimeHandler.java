@@ -1,4 +1,4 @@
-package UserInterface;
+package Logics;
 
 public class TimeHandler {
     
@@ -45,7 +45,7 @@ public class TimeHandler {
     public int calculateDifferenceBetweenDays() {
         return getToday() - getYesterday();
     }
-    static TimeHandler th = new TimeHandler();
+    public static TimeHandler timeHandler = new TimeHandler();
     private int today;
     private int yesterday;
     private int actualYear;
