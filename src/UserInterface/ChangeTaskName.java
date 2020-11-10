@@ -1,9 +1,9 @@
-package Program;
+package UserInterface;
 
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
-import static Program.MainFrame.*;
+import static UserInterface.MainFrame.*;
 
 public final class ChangeTaskName extends JFrame {
     

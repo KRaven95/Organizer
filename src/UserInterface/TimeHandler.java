@@ -1,4 +1,4 @@
-package Program;
+package UserInterface;
 
 public class TimeHandler {
     

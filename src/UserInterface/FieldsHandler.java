@@ -1,6 +1,6 @@
-package Program;
+package UserInterface;
 
-import static Program.MainFrame.mainFrame;
+import static UserInterface.MainFrame.mainFrame;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;

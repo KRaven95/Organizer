@@ -1,7 +1,7 @@
-package Program;
+package UserInterface;
 
-import static Program.MainFrame.mainFrame;
-import static Program.TimeHandler.th;
+import static UserInterface.MainFrame.mainFrame;
+import static UserInterface.TimeHandler.th;
 import java.io.*;
 
 public class SaveToTxt implements Runnable{

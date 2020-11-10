@@ -1,6 +1,6 @@
-package Program;
+package UserInterface;
 
-import static Program.MainFrame.*;
+import static UserInterface.MainFrame.*;
 import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;

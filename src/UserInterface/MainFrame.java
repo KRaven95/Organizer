@@ -1,7 +1,7 @@
-package Program;
+package UserInterface;
 
-import static Program.FieldsHandler.*;
-import static Program.TimeHandler.th;
+import static UserInterface.FieldsHandler.*;
+import static UserInterface.TimeHandler.th;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
